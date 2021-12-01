@@ -4,6 +4,12 @@ A basic Diplomacy Windows application.
 
 **Q&A**
 
+Q: How do I play it?     
+A: Download it here.
+
+Q: How do I compile it myself?     
+A: I would guess that you have to download the files and make the SFML dependancies work.
+
 Q: What is this?     
 A: A basic Diplomacy Windows application.
 
