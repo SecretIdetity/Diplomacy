@@ -1,0 +1,12 @@
+33 1 0 1 0
+
+This is the settings file.
+1 is on - 0 is off
+Was too lazy to make a UI
+You can change your settings in the first line separated by space (defaults are in brackets):
+
+1 min time per iteration                  (33)   [in ms; 0 effectively is no fps limit]
+2 enable fps limit                        (1)    [turning off will use hardware resources to the maximum]
+3 show fps                                (0)    [might lead to crashes]
+4 show rectangle on unit that wont move   (1)    [only cosmetic]
+5 enable debug mode                       (0)    [shows console with debug texts]

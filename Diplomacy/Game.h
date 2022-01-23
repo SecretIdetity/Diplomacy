@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable : 4996)
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
@@ -6,6 +7,8 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <queue>
+#include <time.h>
 #include <SFML/Graphics.hpp>
 #include <SFML/Network.hpp>
 using namespace sf;
@@ -15,14 +18,16 @@ class Unit
 private:
 	void initUnit();
 public:
-	int pos1, pos2, country, type, move, strenght;
-	// 0 || 1 || 2 || 3 || 4 || 5
+	int pos1, pos2, country, type, move, sucess;
+	// 0 || 1 || 2 || 3 || 4 || 5 idk wat dis id lul
+	//move: 0 move/stay || 1 supp || 2 conv || 3 canc move || 4 canc supp || 5 canc conv || 6 disband
 	Unit();
 	virtual ~Unit();
 };
 class Game
 { 
 private:
+	Clock timer;
 	RenderWindow* window;
 	VideoMode videoMode;
 	Event ev;
@@ -32,11 +37,14 @@ private:
 	VertexArray region;
 	VertexArray units;
 	VertexArray domBar;
-	VertexArray arrow;
+	VertexArray arrows;
 	VertexArray adjudicated;
 	VertexArray menu;
 	Sprite text;
 	RenderTexture tex;
+	Sprite fps;
+	RenderTexture fp;
+	Text fpt;
 	Font verdana;
 	Unit unit[34];
 	Vector2f unitPos[78];
@@ -45,10 +53,11 @@ private:
 	// 0 isOcean || 1 unitLocation || 2 vertexCountMap || 3 supplAreaLink & regionCountry || 4 dataInt || 5 dataExt || 6 total  
 	
 	//dataInt: 0 mapArrayCount || 1 borderArrayCount || 2 supplAreaCount || 3 supplAreaArrayCount || 4 cursorRegion || 5 cursorLastRegion || 6 pos1 || 7 lastPos1 || 8 pos2 || 9 lastpos2 || 10 posCount
-	// 11 de || 12 oe || 13 ru || 14 fr || 15 it || 16 tr || 17 gb || 18 regionSize || 19 regionBorder
-	// 20 unitSize || 21 unitBorder || 22 borderSize || 23 arrowThiccness || 24 arrowLength || 25 arrowWidth || 26 selectedUnit || 27 year (0 spring 1 fall 2 winter) || 28 fontSize || 29 
+	// 11 de || 12 au || 13 ru || 14 fr || 15 it || 16 tr || 17 gb || 18 regionSize || 19 regionBorder
+	// 20 unitSize || 21 unitBorder || 22 borderSize || 23 arrowThiccness || 24 arrowLength || 25 arrowWidth || 26 selectedUnit || 27 year (0 orders 1 | 1 resolution 1 | 2 retreat/disband 1 | 3 orders 2 | 4 resulution 2 | 5 retreat/disband 2 | 6 create/disband) || 28 fontSize || 29 updatePos1 || 30 updatePos2
+	// 31 total
 
-	//dataExt: 0 scale
+	//dataExt: 0 fpsLimit || 1 isFpsLimit || 2 showFps || 3 showBorder || 4 debug
 	void initVar();
 	void initWin();
 	void initGame();
@@ -62,7 +71,7 @@ public:
 	void updateSelector();
 	void updatePos();
 	void updateUnits();
-	void moveUnit();
+	//void moveUnit();
 	void unitSelector();
 	void render();
 	void cursorInRegion();
@@ -70,7 +79,14 @@ public:
 	bool isInsideTriangle(Vector2f x1, Vector2f x2, Vector2f x3, Vector2f p);
 	float det(Vector2f u, Vector2f v);
 	void adjudicate();
-	bool moveTile(int type, int pos1, int pos2);
+	bool moveTile(Unit unit, int pos2);
+	void frames();
+	void keyboard(Keyboard::Key key);
+	void drawArrows(int selUnit, int pos2);
+	void hashUnits();
+	void error(int type, string reason);
+	int getChecksum(ifstream file);
+	bool checkResolved(int country);
+	bool checkDisbanded(int country);
 };
 
- 
