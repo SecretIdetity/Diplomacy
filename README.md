@@ -11,7 +11,7 @@ Q: How do I play it?
 A: Download it here once its done.
 
 Q: How do I compile it myself?     
-A: I would guess that you have to download the files and make the SFML dependancies work.
+A: You can download this repo and SFML on https://www.sfml-dev.org/download/sfml/2.5.1/ and link the vcxproj towards it.
 
 Q: What is this?     
 A: A basic Diplomacy Windows application for some quick games.
