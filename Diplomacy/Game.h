@@ -13,6 +13,12 @@
 #include <SFML/Network.hpp>
 using namespace sf;
 using namespace std;
+//bc screw typing the whole for i stuff
+#define loop(start, end, increment) for(int i = start; i < end; i += increment) //standart i for loop
+#define loo(end, increment) for(int i = 0; i < end; i += increment) //standart i for loop but starting at 0
+#define lo(end) for(int i = 0; i < end; i++) //standart i for loop starting from 0 with increment 1
+#define llo(end, increment) for(int j = 0; j < end; j += increment) //standart j for loop but starting at 0
+#define ll(end) for(int j = 0; j < end; j++) //standart j for loop starting from 0 with increment 1
 class Unit
 {
 private:
@@ -34,6 +40,7 @@ private:
 	VertexArray map;
 	VertexArray selector;
 	VertexArray border;
+	VertexArray debugtri;
 	VertexArray region;
 	VertexArray units;
 	VertexArray domBar;
@@ -87,6 +94,6 @@ public:
 	void error(int type, string reason);
 	int getChecksum(ifstream file);
 	bool checkResolved(int country);
-	bool checkDisbanded(int country);
+	void checkConvoy();
 };
 
