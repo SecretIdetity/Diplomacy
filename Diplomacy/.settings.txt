@@ -9,4 +9,4 @@ You can change your settings in the first line separated by space (defaults are 
 2 enable fps limit                        (1)    [turning off will use hardware resources to the maximum]
 3 show fps                                (0)    [might lead to crashes]
 4 show rectangle on unit that wont move   (1)    [only cosmetic]
-5 enable debug mode                       (0)    [shows console with debug texts]
+5 enable debug mode                       (0)    [shows activates debug utils and console with debug texts]

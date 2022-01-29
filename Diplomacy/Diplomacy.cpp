@@ -9,6 +9,184 @@ int main()
     }
     return 0;
 }
+//Archive of old stuff that was once used here
+
+//old unitSelector
+
+/*if (unit[data[1][data[4][6] - 1] - 1].move == 2) {
+    unit[data[1][data[4][6] - 1] - 1].move = 0;
+    lo(34) {
+        if (unit[i].move == 2) {
+            if (unit[i].pos2 != unit[i].pos1) {
+                unit[i].pos2 = unit[i].pos1;
+                unit[i].move = 0;
+            }
+        }
+        else if (
+            !moveTile(unit[i], unit[i].pos2)) {
+            unit[i].pos2 = unit[i].pos1;
+            unit[i].move = 0;
+        }
+    }
+}
+
+            if (data[4][26] && unit[i].move == 1 && i != data[4][26] - 1 && unit[i].pos2 == unit[data[4][26] - 1].pos1) {
+                unit[i].pos2 = unit[i].pos1;
+                unit[i].move = 0;
+            }*/
+
+
+//old keyboard
+
+	/*case Keyboard::B:
+        if (data[0][unit[data[4][26] - 1].pos1]) {
+            unit[data[4][26] - 1].move = 2;
+            data[4][10] = 0;
+        }
+        break;*/
+
+
+//old initGame
+
+    /*ofstream fle(".error.txt");
+    fle << "If this report is empty you encountered a runtime error." << endl;
+    fle.close();*/
+
+
+//old moveunit
+
+/*void Game::moveUnit()
+{
+    if (this->data[4][6] != 0 && this->data[4][8] != 0) {
+        for (int i = 0; i < 34; i++) {
+            if (unit[i].pos1 == this->data[4][6]) {
+                unit[i].pos2 = this->data[4][8];
+            } // check if movement possible
+        }
+    }
+} idk why this is here */
+
+
+//old adjudicate
+
+    /*
+    //need year to adjudicate
+    //need logic :/
+    if (this->data[4][27] % 3 != 2) {
+        for (int i = 0; i < 34; i++) { //unitAdjudicate
+            for (int j = 0; j < 34; j++) { //reset array
+                this->data[1][j] = 0;
+            }
+            for (int j = 0; j < 34; j++) { //set array
+                if (this->unit[j].country != 0) {
+                    this->data[1][unit[j].pos1 - 1] = j + 1;
+                }
+            }
+            for (int j = 0; j < 34; j++) { //check if same destination
+                for (int k = 0; k < j; k++) {
+                    if (this->unit[j].pos2 == this->unit[k].pos2) {
+                        this->unit[j].move = this->unit[k].move = 1;
+                    }
+                }
+            }
+            for (int j = 0; j < 34; j++) { //move if possible
+                if (this->unit[j].move == 1) { //stay when flagged
+                    this->unit[j].pos2 = this->unit[j].move = 0;
+                }
+                else if (this->data[1][this->unit[j].pos2 - 1] != 0) { //when occupied
+                    if (this->unit[this->data[1][this->unit[j].pos2 - 1] - 1].pos2 == 0) { //stay when occupied
+                        this->unit[j].pos2 = 0;
+                    }
+                }
+                else { //move when free
+                    this->data[1][this->unit[j].pos1 - 1] = 0;
+                    this->unit[j].pos1 = this->unit[j].pos2;
+                    this->unit[j].pos2 = this->unit[j].move = 0;
+                }
+            }
+        }
+    }
+    if (this->data[4][27] % 3 == 2) {
+        //update based on region count
+    }bunch of stuff idk what is how works
+    for (int i = 0; i < 34; i++) {
+        for (int j = 0; j < 34; j++) {
+            1 == 1;
+        }
+    }
+    if (this->data[4][27] % 3 == 1) {
+        updateColors();
+    }
+    */
+
+
+//old moveTile
+
+        //if (this->unit[this->data[1][pos2] - 1].pos2 == uni.pos1 && this->data[1][pos2] != 0)
+            //return 0;
+        /*for (int i = 0; i < 34; i++) {
+            if (unit[i].pos2 == pos2 && unit[i].pos1 != uni.pos1 && unit[i].pos1 != unit[i].pos2 && unit[i].move == 0)
+                return 0;
+        }*/
+
+        /*for (int i = 0; i < 11; i++) {
+            int target = this->tile[1][uni.pos1 - 1][i] - 1;
+            if (target == -1)
+                continue;
+            if (this->data[1][target] > 0 && this->unit[this->data[1][target] - 1].move == 2) {
+                checked[target] = 1;
+                queue.push(target);
+            }
+        }
+        while (!queue.empty()) {
+            int popped = queue.front();
+            queue.pop();
+            for (int i = 0; i < 11; i++) {
+                int target = this->tile[1][popped][i] - 1;
+                if (target == -1)
+                    continue;
+                if (pos2 == target + 1 && !this->data[0][pos2 - 1])
+                    return 1;
+                if (this->data[1][target] > 0 && this->unit[this->data[1][target] - 1].move == 2 && !checked[target]) {
+                    checked[target] = 1;
+                    queue.push(target);
+                }
+            }
+        }*/
+        //dont know what i did lets redo it
+        /*for (int i = 0; i < 11; i++) {
+            int t = this->tile[(uni.type + 1) % 2][uni.pos1 - 1][i] - 1;
+            if (t == -1)
+                continue;
+            t = this->data[1][t];
+            if (this->unit[t].move == 2 && qu[t] == false) {
+                q.push(t);
+                qu[t] = true;
+                cout << t << endl;
+            }
+        }*/
+        //here once was a 45 line long fuuu bc of convoys
+        /*idk whats going on here its gotta be rewritten
+        while (!q.empty()) {
+            int qq = q.front();
+            q.pop();
+            int
+            qu[this->unit[this->data[1][qq]].pos1] = true;
+            for (int i = 0; i < 11; i++) {
+                int t = this->tile[(this->unit[qq].type + 1) % 2][this->unit[qq].pos1 - 1][i] - 1;
+                if (t == -1)
+                    continue;
+                if (t == pos2 && this->data[0][t] == 0)
+                    return 1;
+                if (this->unit[t].move == 2 && qu[t] == false) {
+                    qu[t] = true;
+                    q.push(t);
+                    cout << t << endl;
+                }
+            }
+        }*/
+
+
 /*old coloring
     int c = 0;
     Color cc;
