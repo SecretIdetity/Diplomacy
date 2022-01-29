@@ -826,7 +826,7 @@ void Game::adjudicate()
 
 bool Game::moveTile(Unit uni, int pos2)
 {
-	cout << "movetile " << uni.pos1 << " " << uni.move << " " << pos2 << endl;
+	//cout << "movetile " << uni.pos1 << " " << uni.move << " " << pos2 << endl;
 	if (!pos2)
 		return 0;
 	bool t = 0;
@@ -1140,7 +1140,6 @@ void Game::checkConvoy()
 		t[i] = 0;
 	lo(34) {
 		if (unit[i].pos1 && unit[i].type && unit[i].move == 2) {
-			cout << endl << i << "a";
 			int tt[34];
 			ll(34) {
 				tt[j] = 0;
@@ -1148,19 +1147,15 @@ void Game::checkConvoy()
 			tt[i] = 1;
 			int a = i;
 			ll(20) {
-				cout << a << "f";
 				int p = unit[a].pos2;
 				if (!p)
 					break;
 				int u = data[1][p - 1];
-				cout << u << "b";
 				if (!u)
 					break;
 				tt[u - 1] = 1;
 				if (unit[u - 1].move == 2 && !unit[u - 1].type) {
-					cout << "c";
 					if (!data[0][unit[u - 1].pos2 - 1]) {
-						cout << "e";
 						ll(34) {
 							if(tt[j])
 							t[j] = 1;
@@ -1168,8 +1163,7 @@ void Game::checkConvoy()
 						break;
 					}
 					if (data[1][unit[u - 1].pos2 - 1]) {
-						cout << "d";
-						a = u - 1;//data[1][unit[u - 1].pos2 - 1] - 1;
+						a = u - 1;
 					}
 					else 
 						break;

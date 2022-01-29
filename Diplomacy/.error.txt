@@ -1,3 +1,0 @@
-This is the error-report from 27.1.2022, 12:17:2:
-If the error(s) cannot be fixed by replacing the file you should update and replace the whole game-folder.
-The .data.txt file was not found. Please add it.
