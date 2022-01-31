@@ -16,6 +16,9 @@ A: You can download this repo and SFML on https://www.sfml-dev.org/download/sfml
 Q: What is this?     
 A: A basic Diplomacy Windows application for some quick games.
 
+Q: Linux?
+A: Should be possible but I would have to remove badly written code that doesn't work on linux.
+
 Q: Where is the map from?     
 A: The border-data and some colours were pulled from https://backstabbr.com which also was the main inspiration for this Project, go check it out.
 
