@@ -5,6 +5,8 @@ Please note that it is still in development and not in a playable state.
 Compiled Release Files will be published once it is.
 I also will make the compiled in-dev files aviable somewhere.
 
+_**WORK IN PROGRESS, NOT SURE WHEN OR IF THIS WILL BE FINISHED**_
+
 **Q&A**
 
 Q: How do I play it?     
